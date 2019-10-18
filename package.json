@@ -43,6 +43,7 @@
     "eslint-plugin-react": "^7.16.0",
     "eslint-plugin-react-hooks": "^2.1.2",
     "react-app-rewired": "^2.1.3",
+    "serve": "^11.2.0",
     "webpack-lighthouse-plugin": "^1.0.5",
     "workbox-webpack-plugin": "^4.3.1"
   }
