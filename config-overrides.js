@@ -5,6 +5,7 @@ const {
   addWebpackPlugin,
 } = require('customize-cra');
 const { InjectManifest } = require('workbox-webpack-plugin');
+const WebpackLighthousePlugin = require('webpack-lighthouse-plugin');
 
 module.exports = function overrideConfigurations(webpack, ...args) {
   webpack.plugins.pop();
@@ -20,6 +21,14 @@ module.exports = function overrideConfigurations(webpack, ...args) {
         globPatterns: ['*.{png,ico}'],
       }),
     ),
+    process.env.LIGHTHOUSE_AUDIT === 'true'
+      ? addWebpackPlugin(
+          new WebpackLighthousePlugin({
+            url: 'http://localhost:5000',
+            disableDeviceEmulation: true,
+          }),
+        )
+      : null,
   )(webpack, ...args);
 
   return overridenConf;
