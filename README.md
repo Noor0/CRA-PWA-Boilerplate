@@ -9,3 +9,5 @@ Use it as a project create with CRA just make sure `swDest` in `config-overrides
 - Clone the repo
 - `yarn install`
 - `yarn start`
+
+To build and perform a Lighthouse audit on your build run `yarn build:audit`
